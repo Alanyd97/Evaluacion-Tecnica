@@ -5,7 +5,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pokemon of pokeList" routerLink="/login">
+    <tr *ngFor="let pokemon of pokeList" routerLink="/poke-detail/{{pokemon.id}}">
       <td>{{pokemon.name}}</td>
       <td>{{pokemon.type[0]}}</td>
       <td>{{pokemon.level}}</td>
