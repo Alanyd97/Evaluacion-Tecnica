@@ -18,7 +18,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     AppComponent,
     PokeDetailComponent,
     HeaderComponent,
-    PokeListComponent,
     PokeNewComponent
   ],
   imports: [

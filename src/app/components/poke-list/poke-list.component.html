@@ -1,1 +1,16 @@
-<p>poke-list works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let column of displayedColumns" scope="col">{{column}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokeList" routerLink="/login">
+      <td>{{pokemon.name}}</td>
+      <td>{{pokemon.type[0]}}</td>
+      <td>{{pokemon.level}}</td>
+
+    </tr>
+   
+  </tbody>
+</table>
