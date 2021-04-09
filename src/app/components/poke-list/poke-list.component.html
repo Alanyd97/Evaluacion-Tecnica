@@ -1,11 +1,11 @@
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let column of displayedColumns" scope="col">{{column}}</th>
+      <th *ngFor="let column of displayed_columns" scope="col">{{column}}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pokemon of pokeList" routerLink="/poke-detail/{{pokemon.id}}">
+    <tr *ngFor="let pokemon of poke_list" routerLink="/poke-detail/{{pokemon.id}}">
       <td>{{pokemon.name}}</td>
       <td>{{pokemon.type[0]}}</td>
       <td>{{pokemon.level}}</td>

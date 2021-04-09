@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonResume } from 'src/app/models/pokemon-resume.model';
-import { PokemonService } from 'src/app/services/pokemon.service';
+import { PokemonService } from 'src/app/services/pokemon/pokemon.service';
 
 @Component({
   selector: 'app-poke-list',
@@ -8,23 +8,20 @@ import { PokemonService } from 'src/app/services/pokemon.service';
   styleUrls: ['./poke-list.component.css']
 })
 export class PokeListComponent implements OnInit {
+  poke_list: PokemonResume[] = this.poke_service.pokemons;
+  displayed_columns: string[] = ['name', 'type', 'level'];
   
-  
-  pokeList:PokemonResume[];
-  displayedColumns: string[];
-  
-  constructor(private pokeService: PokemonService, ) {}
+  constructor(private poke_service: PokemonService, ) {
+  }
 
   ngOnInit(): void {
-    this.pokeList = this.getPokemons(); 
-    this.displayedColumns = ['name', 'type', 'level'];
-    console.log(this.pokeList);
-    
-    
+    this.getPokemons();
   }
 
   getPokemons(){
-    return this.pokeService.getPokemons();
+    return this.poke_service.getPokemons$().subscribe(pokemons =>{
+      this.poke_list = pokemons;
+    });
   }
 
 }
