@@ -7,7 +7,7 @@ import { Pokemon } from 'src/app/models/pokemon.module';
 export class PokemonService {
   //en este caso el array es de prueba y esta publico,
   //deberia ser un observable que conecta con la api, el cual se actualiza y
-  //actualiza al restod e los suscriptos
+  //actualiza al resto de los suscriptos
   public pokemons: Pokemon[] = [
     {
       id:1,
@@ -48,13 +48,23 @@ export class PokemonService {
       min_level:10,
       evolutions:[
         {
-          id:122,
-          name: "Bulbasur 1",
+          id:112,
+          name: "Ivyasour",
           types: ["aqua 1", " terra"],
           level:0,
           min_level:12,
           evolutions: null,
-          image: "url",
+          image: "./../../../assets/images/ivyasour.png",
+          abilities: ["aqua punch 1", "earth punch"]
+        },
+        {
+          id:112,
+          name: "Ivyasour",
+          types: ["aqua 1", " terra"],
+          level:0,
+          min_level:121,
+          evolutions: null,
+          image: "./../../../assets/images/venusaur.png",
           abilities: ["aqua punch 1", "earth punch"]
         }
       ],
