@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; // CLI imports router
 import { PokeListComponent } from './components/poke-list/poke-list.component';
-import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import {PokemonDetail} from "./models/pokemon-detail.model"
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 
 const routes: Routes = [

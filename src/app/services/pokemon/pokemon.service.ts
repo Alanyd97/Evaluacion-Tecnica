@@ -1,55 +1,65 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { PokemonResume } from '../../models/pokemon-resume.model';
 import { Observable, Subject } from 'rxjs';
-import { PokeDetailService } from '../poke-detail/poke-detail.service';
+import { Pokemon } from 'src/app/models/pokemon.module';
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-  public pokemons: PokemonResume[]= [
+  public pokemons: Pokemon[] = [
     {
-      id: 1,
-      name: "aa",
-      type: ["aa", "aa"], 
-      level: 2,
-    },  
-    {
-      id: 2,
-      name: "bb",
-      type: ["b", "b"], 
-      level: 2,
-    },  
-    {
-      id: 3,
-      name: "c",
-      type: ["c", "c"], 
-      level: 2,
+      id:1,
+      name: "Bulbasur",
+      type: ["aqua", " terra"],
+      level:12,
+      min_level:10,
+      evolutions:[
+        {
+          id:112,
+          name: "Bulbasur 1",
+          type: ["aqua 1", " terra"],
+          level:0,
+          min_level:12,
+          evolutions: null,
+          image: "url",
+          abilities: ["aqua punch 1", "earth punch"]
+        }
+      ],
+      image: "url",
+      abilities: ["aqua punch", "earth punch"]
     },
-  ]
-  private pokemons$:Subject<PokemonResume[]>
-  private pokemon_current: PokemonResume;
-  pokemon_current$: Subject<PokemonResume>
+    {
+      id:12,
+      name: "Bulbasur 2",
+      type: ["aqua", " terra"],
+      level:13,
+      min_level:10,
+      evolutions:[
+        {
+          id:122,
+          name: "Bulbasur 1",
+          type: ["aqua 1", " terra"],
+          level:0,
+          min_level:12,
+          evolutions: null,
+          image: "url",
+          abilities: ["aqua punch 1", "earth punch"]
+        }
+      ],
+      image: "url",
+      abilities: ["aqua punch", "earth punch"]
+    }
+  ]      //<<<<<---------------------
 
-  constructor(poke_detail_service:PokeDetailService) {
-    this.pokemon_current$ = new Subject();
-    this.pokemons$ = new Subject()
+  private pokemon_current: Pokemon;
+
+  constructor() {
    }
 
-  updateCurrent(poke:PokemonResume){
+  updateCurrent(poke:Pokemon){
     this.pokemon_current = poke;
-    this.pokemon_current$.next(this.pokemon_current);
   }
 
-  addPokemon(poke:PokemonResume){
+  addPokemon(poke:Pokemon){
     this.pokemons.push(poke);
-    this.pokemons$.next(this.pokemons);
-  }
-
-  getPokemons$():Observable<PokemonResume[]>{
-    return this.pokemons$.asObservable();
-  }
-  getPokemonCurrent$():Observable<PokemonResume>{
-    return this.pokemon_current$.asObservable();
   }
 }

@@ -15,13 +15,5 @@ export class AppComponent {
   }
   title = 'pokedex';
   logged=false;
-  isLogged(){
-    return this.logged;
-  }
-
-  checkLoggin(){
-    if(!this.isLogged()){
-      
-    }
-  }
+ 
 }
