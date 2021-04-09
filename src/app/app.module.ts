@@ -12,13 +12,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './pages/home/home.module';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokeDetailComponent,
     HeaderComponent,
-    PokeNewComponent
+    PokeNewComponent,
+    CarrouselComponent
   ],
   imports: [
     AppRoutingModule,
@@ -27,7 +30,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MaterialModule,
     HttpClientModule,
     HomeModule,
-    MatSidenavModule
+    MatSidenavModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,23 @@
 <div class="row d-flex justify-content-center">
    <div class="col-7 article">
+       <img src="{{pokemon_current.image}}" class="img-fluid" alt="">
    </div>
    <div class="col-3 article">
-       <div class="col-12">asd</div>
-       <div class="col-12">asd</div>
-       <div class="col-12">asd</div>
+       <div class="col-12"><h4>Name: {{pokemon_current.name}}</h4></div>
+       <div class="col-12">
+        <h4>Type/s: </h4>
+         <ul>
+             <li *ngFor="let type of pokemon_current.types | slice:0:2;">{{type}}</li>
+         </ul>
+     </div>
+       <div class="col-12">
+            <h4>Level: {{pokemon_current.level}} </h4>
+       </div>
    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-10">
+      <ngbd-carousel-basic [evolutions]="pokemon_current.evolutions"></ngbd-carousel-basic>
+    </div>
+
 </div>

@@ -1,43 +1,56 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
 import { Pokemon } from 'src/app/models/pokemon.module';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
+  //en este caso el array es de prueba y esta publico,
+  //deberia ser un observable que conecta con la api, el cual se actualiza y
+  //actualiza al restod e los suscriptos
   public pokemons: Pokemon[] = [
     {
       id:1,
-      name: "Bulbasur",
-      type: ["aqua", " terra"],
+      name: "Bolbasour",
+      types: ["aqua", " terra"],
       level:12,
       min_level:10,
       evolutions:[
         {
           id:112,
-          name: "Bulbasur 1",
-          type: ["aqua 1", " terra"],
+          name: "Ivyasour",
+          types: ["aqua 1", " terra"],
           level:0,
           min_level:12,
           evolutions: null,
-          image: "url",
+          image: "./../../../assets/images/ivyasour.png",
+          abilities: ["aqua punch 1", "earth punch"]
+        },
+        {
+          id:112,
+          name: "Ivyasour",
+          types: ["aqua 1", " terra"],
+          level:0,
+          min_level:121,
+          evolutions: null,
+          image: "./../../../assets/images/venusaur.png",
           abilities: ["aqua punch 1", "earth punch"]
         }
       ],
-      image: "url",
+      image: "./../../../assets/images/bulbasur.png",
       abilities: ["aqua punch", "earth punch"]
     },
     {
       id:12,
       name: "Bulbasur 2",
-      type: ["aqua", " terra"],
+      types: ["aqua", " terra"],
       level:13,
       min_level:10,
       evolutions:[
         {
           id:122,
           name: "Bulbasur 1",
-          type: ["aqua 1", " terra"],
+          types: ["aqua 1", " terra"],
           level:0,
           min_level:12,
           evolutions: null,
@@ -45,21 +58,11 @@ export class PokemonService {
           abilities: ["aqua punch 1", "earth punch"]
         }
       ],
-      image: "url",
+      image: "./../../../assets/images/bulbasur.png",
       abilities: ["aqua punch", "earth punch"]
     }
-  ]      //<<<<<---------------------
-
-  private pokemon_current: Pokemon;
-
+  ]      
   constructor() {
    }
 
-  updateCurrent(poke:Pokemon){
-    this.pokemon_current = poke;
-  }
-
-  addPokemon(poke:Pokemon){
-    this.pokemons.push(poke);
-  }
 }

@@ -1,0 +1,14 @@
+<ngb-carousel *ngIf="evolutions">
+    <ng-template *ngFor="let evolution of evolutions" ngbSlide>
+      <div class="picsum-img-wrapper ">
+        <img [src]="evolution.image" alt="Random first slide" class="img-fluid">
+      </div>
+      <div class="carousel-caption">
+        <h3>{{evolution.name}}</h3>
+        <p>minimum level: {{evolution.min_level}}</p>
+        <ul>
+           <li *ngFor="let abilitie of evolution.abilities" class="abilitie-item">{{abilitie}}</li> 
+        </ul>
+      </div>
+    </ng-template>
+  </ngb-carousel>

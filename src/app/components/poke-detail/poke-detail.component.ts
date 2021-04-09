@@ -11,7 +11,7 @@ import { Pokemon } from 'src/app/models/pokemon.module';
 })
 export class PokeDetailComponent implements OnInit {
   private poke_list: Pokemon[] = this.poke_service.pokemons;
-  private pokemon_current: Pokemon;
+  pokemon_current: Pokemon;
 
   constructor(private poke_service: PokemonService, private route: ActivatedRoute) {
   
